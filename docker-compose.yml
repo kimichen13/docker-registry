@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  registry:
+    image: registry
+    restart: always
+    container_name: thinkimi_registry
+    volumes:
+      - ./:/etc/docker/registry
+      - registry-data:/var/lib/registry
+    environment:
+      VIRTUAL_HOST: registry.thinkimi.com
+      VIRTUAL_PORT: 445
+      LETSENCRYPT_HOST: registry.thinkimi.com
+      LETSENCRYPT_EMAIL: kimi@thinkimi.com
+
+volumes:
+  registry-data:
+
+networks:
+  default:
+    external:
+      name: thinkimi-networks
