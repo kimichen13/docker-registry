@@ -1,1 +1,1 @@
-/home/kimi/docker-nginx-letsencrypt/volumes/certs/registry.thinkimi.com/fullchain.pem
+/home/kimi/docker-nginx-letsencrypt/volumes/certs/registry.thinkimi.com.crt
