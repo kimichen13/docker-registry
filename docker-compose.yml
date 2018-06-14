@@ -6,8 +6,9 @@ services:
     restart: always
     container_name: thinkimi_registry
     volumes:
-      - "./:/etc/docker/registry"
-      - "registry-data:/var/lib/registry"
+      - "/var/run/docker.sock:/tmp/docker.sock:ro"
+      - "./volumes:/etc/docker/registry/"
+      - "./volumes/data:/var/lib/registry"
     environment:
       VIRTUAL_HOST: registry.thinkimi.com
       VIRTUAL_PORT: 445
