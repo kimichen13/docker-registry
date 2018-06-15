@@ -15,9 +15,6 @@ services:
       LETSENCRYPT_HOST: registry.thinkimi.com
       LETSENCRYPT_EMAIL: kimi@thinkimi.com
 
-volumes:
-  registry-data:
-
 networks:
   default:
     external:
