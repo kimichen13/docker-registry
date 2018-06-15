@@ -3,8 +3,8 @@
 #+BEGIN_SRC shell
 docker run --rm \
     --entrypoint htpasswd \
-    registry \
-    -Bbn username password > auth/nginx.htpasswd
+    registry:2 \
+    -Bbn username password > auth/htpasswd
 #+END_SRC
 
 Replace ~username~ ~password~ above to your own.
