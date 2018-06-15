@@ -8,11 +8,11 @@ services:
     volumes:
       - "/var/run/docker.sock:/tmp/docker.sock:ro"
       - "./volumes/auth:/auth"
-      - "./volumes/certs:/certs"
+      - "/home/kimi/docker-nginx-letsencrypt/volumes/certs:/certs"
       - "./volumes/data:/var/lib/registry"
     environment:
       VIRTUAL_HOST: registry.thinkimi.com
-      VIRTUAL_PORT: 445
+      VIRTUAL_PORT: 5000
       LETSENCRYPT_HOST: registry.thinkimi.com
       LETSENCRYPT_EMAIL: kimi@thinkimi.com
       REGISTRY_HTTP_TLS_CERTIFICATE: /certs/registry.thinkimi.com.crt
