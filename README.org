@@ -1,3 +1,22 @@
 * docker-registry
 
-** 
+** Clone the repository.
+
+   #+BEGIN_SRC shell
+   git clone https://github.com/kimichen13/docker-registry.git
+   #+END_SRC
+
+** Generate http auth file.
+
+   #+BEGIN_SRC shell
+   docker run --rm \
+      --entrypoint htpasswd \
+      registry:2 \
+      -Bbn username password > auth/htpasswd
+   #+END_SRC
+
+   Replace ~username~ ~password~ above to your own.
+
+** Start up.
+
+   Run ~docker-compose up -d~
